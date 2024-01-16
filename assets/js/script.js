@@ -41,6 +41,25 @@ $(document).ready(function() {
     todayTemperature.text(`${temperature}°C`);
     todayHumidity.text(`${humidity}%`);
     todayWind.text(`${wind}m/s`);
+
+    // Iterates through forecast data
+    for (i=0;i<5;i++){
+      // Extracts information for each forecast
+      var forDate = new Date((data.list[((i+1)*8)-1].dt)*1000).toLocaleDateString();
+      var iconCode = data.list[((i+1)*8)-1].weather[0].icon;
+      var forIconURL="https://openweathermap.org/img/wn/"+iconCode+".png";
+      var forTemp = Math.round(data.list[((i+1)*8)-1].main.temp);
+      var forHumidity= data.list[((i+1)*8)-1].main.humidity;
+      var forWind= data.list[((i+1)*8)-1].wind.speed;
+      
+      // Updates HTML elements with forecast data
+      $("#forDate"+i).text(forDate);
+      $("#forIcon"+i).html("<img src="+forIconURL+">");
+      $("#forTemp"+i).text(`${forTemp}°C`);
+      $("#forHumidity"+i).text(forHumidity+"%");
+      $("#forWind"+i).text(forWind+"m/s");
+    };
+
   };
 
 });
