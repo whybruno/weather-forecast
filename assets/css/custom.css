@@ -35,6 +35,18 @@ b {
   text-align: center;
 }
 
+/* CITIES-LOGS-ITEM styling */
+#cities-logs {
+  background-color: var(--color-10);
+}
+.cities-logs-item {
+  text-decoration: none;
+}
+.cities-logs-item:hover {
+  color: var(--color-07);
+  cursor: pointer;
+}
+
 /* CITY-NAME styling */
 
 .city-name {

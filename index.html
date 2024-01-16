@@ -42,11 +42,11 @@
           <aside class="col-4">
             <form id="search-form">
               <div class="p-3">
-                <input id="search-input" type="text" class="col-12 p-3 fs-5 rounded-pill search" placeholder="Search city" aria-label="Search">
+                <input id="search-input" type="text" class="col-12 p-3 fs-5 rounded-pill search" placeholder="Search city">
               </div>
             </form>
 
-            <div id="city-history" class="">
+            <div id="cities-logs" class="col-8 p-1 mx-auto fs-6">
             </div>
           </aside>
 
@@ -55,7 +55,7 @@
             <!-- CITY NAME ROW -->
             <div class="row">
               <div class="col-12 p-1 text-center rounded-pill city-name">
-                <h2 class="display-3">London</h2>
+                <h2 id="today-city" class="display-3">City Name</h2>
               </div>
             </div>
             
@@ -63,24 +63,23 @@
             <div class="row mt-5 justify-content-between">
               <!-- TODAY ICON -->
               <div id="today-icon" class="col-1 p-3 my-0 d-flex align-items-center justify-content-center rounded-pill city-icon">
-                <img src="http://openweathermap.org/img/w/02d.png" alt="">
               </div>
 
               <!-- TODAY TEMPERATURE -->
               <div class="col-5 p-3 d-flex align-items-center justify-content-center rounded-pill city-tem">
-                <p id="today-tem" class="display-1 my-0">29°C</p>
+                <p id="today-tem" class="display-1 my-0"></p>
               </div>
 
               <!-- TODAY HIMIDITY -->
               <div class="col-2 p-3 d-flex flex-column align-items-center justify-content-center rounded-pill city-hum">
                 <p class="fs-6 my-0">HUMIDITY</p>
-                <p id="today-hum" class="fs-2 my-0">58%</p>
+                <p id="today-hum" class="fs-2 my-0"></p>
               </div>
 
               <!-- TODAY WIND SPEED -->
               <div class="col-3 p-3 d-flex flex-column align-items-center justify-content-center rounded-pill city-win">
                 <p class="fs-6 my-0">WIND</p>
-                <p id="today-win" class="fs-2 my-0">2.18 m/s</p>
+                <p id="today-win" class="fs-2 my-0"></p>
               </div>
             </div>
 
@@ -88,86 +87,86 @@
             <div class="row gap-3 mt-5">
               <!-- DAY 1 FORECAST -->
               <div id="day-one" class="col p-3">
-                <p id="day-one-date" class="fs-6  text-center">16/01/2024</p>
-                <div id="day-one-icon" class="my-0 d-flex align-items-center justify-content-center">
-                  <img src="http://openweathermap.org/img/w/02d.png" alt="">
+                <p id="forDate0" class="fs-6  text-center"></p>
+                <div id="forIcon0" class="my-0 d-flex align-items-center justify-content-center">
+                  
                 </div>
-                <p id="day-one-tem" class="display-3 my-0 text-center">29°C</p>
+                <p id="forTemp0" class="display-3 my-0 text-center"></p>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">HUMIDITY</p>
-                  <p id="day-one-hum" class="fs-4 my-0">58%</p>
+                  <p id="forHumidity0" class="fs-4 my-0"></p>
                 </div>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">WIND</p>
-                  <p id="day-one-win" class="fs-4 my-0">2.18 m/s</p>
+                  <p id="forWind0" class="fs-4 my-0"></p>
                 </div>
               </div>
 
               <!-- DAY 2 FORECAST -->
               <div id="day-two" class="col p-3">
-                <p id="day-two-date" class="fs-6  text-center">16/01/2024</p>
-                <div id="day-two-icon" class="my-0 d-flex align-items-center justify-content-center">
-                  <img src="http://openweathermap.org/img/w/02d.png" alt="">
+                <p id="forDate1" class="fs-6  text-center"></p>
+                <div id="forIcon1" class="my-0 d-flex align-items-center justify-content-center">
+                  
                 </div>
-                <p id="day-two-tem" class="display-3 my-0 text-center">29°C</p>
+                <p id="forTemp1" class="display-3 my-0 text-center"></p>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">HUMIDITY</p>
-                  <p id="day-two-hum" class="fs-4 my-0">58%</p>
+                  <p id="forHumidity1" class="fs-4 my-0"></p>
                 </div>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">WIND</p>
-                  <p id="day-two-win" class="fs-4 my-0">2.18 m/s</p>
+                  <p id="forWind1" class="fs-4 my-0"></p>
                 </div>
               </div>
 
               <!-- DAY 3 FORECAST -->
               <div id="day-three" class="col p-3">
-                <p id="day-three-date" class="fs-6  text-center">16/01/2024</p>
-                <div id="day-three-icon" class="my-0 d-flex align-items-center justify-content-center">
-                  <img src="http://openweathermap.org/img/w/02d.png" alt="">
+                <p id="forDate2" class="fs-6  text-center"></p>
+                <div id="forIcon2" class="my-0 d-flex align-items-center justify-content-center">
+                  
                 </div>
-                <p id="day-three-tem" class="display-3 my-0 text-center">29°C</p>
+                <p id="forTemp2" class="display-3 my-0 text-center"></p>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">HUMIDITY</p>
-                  <p id="day-three-hum" class="fs-4 my-0">58%</p>
+                  <p id="forHumidity2" class="fs-4 my-0"></p>
                 </div>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">WIND</p>
-                  <p id="day-three-win" class="fs-4 my-0">2.18 m/s</p>
+                  <p id="forWind2" class="fs-4 my-0"></p>
                 </div>
               </div>
 
               <!-- DAY 4 FORECAST -->
               <div id="day-four" class="col p-3">
-                <p id="day-four-date" class="fs-6  text-center">16/01/2024</p>
-                <div id="day-four-icon" class="my-0 d-flex align-items-center justify-content-center">
-                  <img src="http://openweathermap.org/img/w/02d.png" alt="">
+                <p id="forDate3" class="fs-6  text-center"></p>
+                <div id="forIcon3" class="my-0 d-flex align-items-center justify-content-center">
+                  
                 </div>
-                <p id="day-four-tem" class="display-3 my-0 text-center">29°C</p>
+                <p id="forTemp3" class="display-3 my-0 text-center"></p>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">HUMIDITY</p>
-                  <p id="day-four-hum" class="fs-4 my-0">58%</p>
+                  <p id="forHumidity3" class="fs-4 my-0"></p>
                 </div>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">WIND</p>
-                  <p id="day-four-win" class="fs-4 my-0">2.18 m/s</p>
+                  <p id="forWind3" class="fs-4 my-0"></p>
                 </div>
               </div>
               
               <!-- DAY 5 FORECAST -->
               <div id="day-five" class="col p-3">
-                <p id="day-five-date" class="fs-6  text-center">16/01/2024</p>
-                <div id="day-five-icon" class="my-0 d-flex align-items-center justify-content-center">
-                  <img src="http://openweathermap.org/img/w/02d.png" alt="">
+                <p id="forDate4" class="fs-6  text-center"></p>
+                <div id="forIcon4" class="my-0 d-flex align-items-center justify-content-center">
+                  
                 </div>
-                <p id="day-five-tem" class="display-3 my-0 text-center">29°C</p>
+                <p id="forTemp4" class="display-3 my-0 text-center"></p>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">HUMIDITY</p>
-                  <p id="day-five-hum" class="fs-4 my-0">58%</p>
+                  <p id="forHumidity4" class="fs-4 my-0"></p>
                 </div>
                 <div class="mt-3 text-center">
                   <p class="fs-6 my-0">WIND</p>
-                  <p id="day-five-win" class="fs-4 my-0">2.18 m/s</p>
+                  <p id="forWind4" class="fs-4 my-0"></p>
                 </div>
               </div>
             </div>
@@ -198,6 +197,11 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
+    ></script>
+
+    <!-- CUSTOM Javascript -->
+    <script
+    src="../assets/js/script.js"
     ></script>
   </body>
 </html>
