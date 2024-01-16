@@ -7,6 +7,29 @@ $(document).ready(function() {
   const todayHumidity = $('#today-hum');
   const todayWind = $('#today-win');
 
+  // checks for previously stored city logs in localStorage
+  const storedHistory = localStorage.getItem('cityLogs');
+  if (storedHistory) {
+    // parses the stored JSON string into an array of city names
+    const parsedHistory = JSON.parse(storedHistory);
+    parsedHistory.forEach(cityName => addCityToHistory(cityName));
+  }
+
+  // checks for previously stored weather data in localStorage
+  const storedData = localStorage.getItem('currentWeatherData');
+  // executes if weather data was found
+  if (storedData) {
+    // parses the stored JSON string into a JavaScript object
+    const parsedData = JSON.parse(storedData);
+
+    // Updates the displayed weather information
+    todayCity.text(parsedData.city);
+    todayIcon.html('<img src="' + parsedData.icon + '" alt="weather icon">');
+    todayTemperature.text(`${parsedData.temperature}°C`);
+    todayHumidity.text(`${parsedData.humidity}%`);
+    todayWind.text(`${parsedData.wind}m/s`);
+  };
+
   // Defines a function named fetchWeatherData that can be awaited
   async function fetchWeatherData(cityName) {
     // Constructs the API request URL
