@@ -60,7 +60,7 @@ $(document).ready(function() {
   // Defines a function named fetchWeatherData that can be awaited
   async function fetchWeatherData(cityName) {
     // Constructs the API request URL
-    const queryURL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${APIKey}`;
+    const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${APIKey}`;
     // Attempts to fetch weather data
     try {
       // Fetches the data
@@ -80,7 +80,7 @@ $(document).ready(function() {
     const city = data.city.name;
     const date = data.list[0].dt;
     // const dateFormat = dayjs(date * 1000).format('DD/MM/YYYY');
-    const icon = `http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`;
+    const icon = `https://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`;
     const temperature = Math.round(data.list[0].main.temp);
     const humidity = data.list[0].main.humidity;
     const wind = data.list[0].wind.speed;
