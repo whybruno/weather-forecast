@@ -23,6 +23,7 @@
 
   <body>
     <header>
+
       <div class="container">
         <div class="row">
           <h1 class="p-5 display-1 text-center">
@@ -30,8 +31,48 @@
           </h1>
         </div>
       </div>
+
     </header>
     <main>
+
+      <div class="container">
+        <div class="row">
+          <aside class="col-4">
+            <form id="search-form">
+              <div class="p-3">
+                <input id="search-input" type="text" class="col-12 p-3 fs-5 rounded-pill search" placeholder="Search city" aria-label="Search">
+              </div>
+            </form>
+
+            <div id="city-history" class="">
+
+            </div>
+          </aside>
+          <div id="today-weather" class="col-8">
+            <div class="row">
+              <div class="col-12 p-1 text-center rounded-pill city-name">
+                <h2 class="display-3">London</h2>
+              </div>
+            </div>
+            <div class="row mt-5 justify-content-between">
+              <div class="col-1 p-3 my-0 d-flex align-items-center justify-content-center rounded-pill city-icon">
+                <img src="http://openweathermap.org/img/w/02d.png" alt="">
+              </div>
+              <div class="col-5 p-3 d-flex align-items-center justify-content-center rounded-pill city-tem">
+                <p id="today-tem" class="display-1 my-0">29°C</p>
+              </div>
+              <div class="col-2 p-3 d-flex flex-column align-items-center justify-content-center rounded-pill city-hum">
+                <p class="fs-6 my-0">HUMIDITY</p>
+                <p id="today-hum" class="fs-2 my-0">58%</p>
+              </div>
+              <div class="col-3 p-3 d-flex flex-column align-items-center justify-content-center rounded-pill city-win">
+                <p class="fs-6 my-0">WIND</p>
+                <p id="today-win" class="fs-2 my-0">2.18 m/s</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </main>
     <footer>

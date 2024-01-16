@@ -1,3 +1,5 @@
+/* ROOT settings */
+
 :root {
   --color-01: #01211C;
   --color-02: #006651;
@@ -5,16 +7,70 @@
   --color-04: #FEDFC7;
   --color-05: #8793FC;
   --color-06: #111015;
+  --color-07: #B0D4CC;
+  --color-08: #80A39B;
+  --color-09: #53746D;
+  --color-10: #294942;
 }
+
+/* GLOBAL styling */
 
 * {
   color: var(--color-04);
 }
-
 body {
-  background-color: var(--color-06);
+  background-color: var(--color-01);
 }
-
 b {
   color: var(--color-03);
+}
+
+/* SEARCH styling */
+
+.search {
+  background-color: var(--color-02);
+  border: none;
+  color: var(--color-04);
+  outline-style: none;
+  text-align: center;
+}
+
+/* CITY-NAME styling */
+
+.city-name {
+  background-color: var(--color-03);
+  color: var(--color-04);
+}
+
+/* CITY-ICON styling */
+
+.city-icon {
+  background-color: var(--color-02);
+}
+
+/* CITY-TEM & TODAY-TEM styling */
+
+.city-tem {
+  background-color: var(--color-02);
+}
+#today-tem {
+  color: var(--color-0);
+}
+
+/* CITY-HUM & TODAY-HUM styling */
+
+.city-hum {
+  background-color: var(--color-02);
+}
+#today-hum {
+  color: var(--color-04);
+}
+
+/* CITY-WIN & TODAY-WIN styling */
+
+.city-win {
+  background-color: var(--color-02);
+}
+#today-win {
+  color: var(--color-04);
 }
