@@ -42,6 +42,16 @@ $(document).ready(function() {
     todayHumidity.text(`${humidity}%`);
     todayWind.text(`${wind}m/s`);
 
+    // Save a piece of data in the browser's local storage
+    localStorage.setItem('currentWeatherData', JSON.stringify({
+      city: city,
+      date: date,
+      icon: icon,
+      temperature: temperature,
+      humidity: humidity,
+      wind: wind,
+    }));
+
     // Iterates through forecast data
     for (i=0;i<5;i++){
       // Extracts information for each forecast
@@ -58,8 +68,17 @@ $(document).ready(function() {
       $("#forTemp"+i).text(`${forTemp}°C`);
       $("#forHumidity"+i).text(forHumidity+"%");
       $("#forWind"+i).text(forWind+"m/s");
-    };
 
+      // Stores forecast data in localStorage
+      localStorage.setItem(`forecastData${i}`, JSON.stringify({
+        forDate: forDate,
+        iconCode: iconCode,
+        forIconURL: forIconURL,
+        forTemp: forTemp,
+        forHumidity: forHumidity,
+        forWind: forWind
+      }));
+    };
   };
 
   // Listens for form submission
