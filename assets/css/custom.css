@@ -74,3 +74,23 @@ b {
 #today-win {
   color: var(--color-04);
 }
+
+#day-one {
+  background-color: var(--color-10);
+}
+
+#day-two {
+  background-color: var(--color-09);
+}
+
+#day-three {
+  background-color: var(--color-10);
+}
+
+#day-four {
+  background-color: var(--color-09);
+}
+
+#day-five {
+  background-color: var(--color-10);
+}
