@@ -24,6 +24,25 @@ $(document).ready(function() {
       return null;
     };
   };
+
+  // Extracts relevant weather data
+  function displayCurrentWeather(data) {
+    const city = data.city.name;
+    const date = data.list[0].dt;
+    // const dateFormat = dayjs(date * 1000).format('DD/MM/YYYY');
+    const icon = `http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`;
+    const temperature = Math.round(data.list[0].main.temp);
+    const humidity = data.list[0].main.humidity;
+    const wind = data.list[0].wind.speed;
+
+    // Updates the displayed weather information
+    todayCity.text(city);
+    todayIcon.html('<img src="' + icon + '" alt="weather icon">');
+    todayTemperature.text(`${temperature}°C`);
+    todayHumidity.text(`${humidity}%`);
+    todayWind.text(`${wind}m/s`);
+  };
+
 });
 
 
