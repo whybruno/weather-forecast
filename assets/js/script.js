@@ -84,6 +84,30 @@ $(document).ready(function() {
     };
   });
 
+  // Create a history of cities searched by the user
+  function addCityToHistory(cityName) {
+    // Checks for existing city in history
+    const existingItem = citiesLogs.find(`div:contains(${cityName.toUpperCase()})`);
+    // Adds city to history if not already present
+    if (!existingItem.length) {
+      const historyItem = $('<div class="cities-logs-item my-1 text-center" href="#">' + cityName.toUpperCase() + '</div>')
+        .on('click', function() {
+          fetchWeatherData(cityName)
+            .then(displayCurrentWeather)
+        });
+        // Adds the history item to the beginning of the "citiesLogs" element.
+        citiesLogs.prepend(historyItem);
+
+        // Retrieves a list of previously searched cities from localStorage
+        // Creating an empty array if none exists
+        const cityLogs = JSON.parse(localStorage.getItem('cityLogs')) || [];
+        // Adds the new city to the city logs array
+        cityLogs.push(cityName);
+        // Saves the updated city logs array back to localStorage for persistence
+        localStorage.setItem('cityLogs', JSON.stringify(cityLogs));
+    };
+  };
+
 });
 
 
