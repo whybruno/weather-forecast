@@ -30,6 +30,33 @@ $(document).ready(function() {
     todayWind.text(`${parsedData.wind}m/s`);
   };
 
+  // Retrieves and displays previously stored forecast data
+  for (let i = 0; i < 5; i++) {
+    // Retrieves a piece of data stored under a key like
+    const forecastData = localStorage.getItem(`forecastData${i}`);
+    // Executes if forecast data was found for that index
+    if (forecastData) {
+      //  Parses the stored JSON string into a JavaScript object
+      const parsedForecastData = JSON.parse(forecastData);
+
+      // Extracts specific forecast information
+      const foreDate = parsedForecastData.forDate;
+      const foreIconURL = parsedForecastData.forIconURL;
+      const foreTemp = parsedForecastData.forTemp;
+      const foreHumidity = parsedForecastData.forHumidity;
+      const foreWind = parsedForecastData.forWind;
+
+      // Updates the content of HTML elements with IDs like
+      $("#forDate"+i).text(foreDate);
+      $("#forIcon"+i).html("<img src="+foreIconURL+">");
+      $("#forTemp"+i).text(`${foreTemp}°C`);
+      $("#forHumidity"+i).text(foreHumidity+"%");
+      $("#forWind"+i).text(foreWind+"m/s");
+    } else {
+      //
+    };
+  };
+
   // Defines a function named fetchWeatherData that can be awaited
   async function fetchWeatherData(cityName) {
     // Constructs the API request URL
