@@ -62,6 +62,28 @@ $(document).ready(function() {
 
   };
 
+  // Listens for form submission
+  $('#search-form').submit(async function(event) {
+    event.preventDefault();
+    // Gathers city name input
+    const cityName = $('#search-input').val().toLowerCase();
+    // Attempts to fetch weather data
+    try {
+      const weatherData = await fetchWeatherData(cityName);
+      // Processes fetched data
+      if (weatherData) {
+        displayCurrentWeather(weatherData);
+
+        addCityToHistory(cityName);
+      } else {
+        alert('City not found.');
+      }
+    // Handles errors  
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+    };
+  });
+
 });
 
 
